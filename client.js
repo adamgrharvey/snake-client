@@ -9,6 +9,10 @@ const connect = function () {
   conn.on("data", (data) => {
     console.log(data)
   });
+  conn.on("connect", () => {
+    console.log('Successfully connected ...')
+    conn.write(`Name: ADM`)
+  });
   
   console.log("Connecting ...");
   return conn;
