@@ -14,6 +14,9 @@ const connect = function () {
     conn.write(`Name: ADM`)
     //conn.write(`Move: up`)
   });
+  conn.on("close", () => {
+    console.log('Connection closed, press Ctrl-C to exit')
+  });
   
   console.log("Connecting ...");
   return conn;
